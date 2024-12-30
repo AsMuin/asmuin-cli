@@ -7,7 +7,7 @@ export default {
     input: 'main.js', // 入口文件
     output: {
         file: 'dist/main.js', // 输出文件
-        format: 'cjs', // 输出格式：CommonJS
+        format: 'es',
         banner: '#!/usr/bin/env node' // 添加 shebang
     },
     plugins: [

@@ -82,11 +82,11 @@ async function main() {
         {
             name: `${chalk.green('React + Axios + TailwindCSS')} - React`,
             value: 'react'
+        },
+        {
+            name: `${chalk.cyan('Express + MongoDB')} - Express`,
+            value: 'express-mongodb'
         }
-        // {
-        //     name: `${chalk.cyan('Vue + TypeScript')} - Vue`,
-        //     value: 'vue-ts'
-        // },
         // {
         //     name: `${chalk.magenta('Next.js + TypeScript')} - Next.js`,
         //     value: 'next-ts'
@@ -96,7 +96,7 @@ async function main() {
         {
             type: 'list',
             name: 'template',
-            message: chalk.bold('请选择模版类型： ---全部内置路由和TypeScript配置'),
+            message: chalk.bold('请选择模版类型： ---全部使用TypeScript'),
             choices: templates
         },
         {
@@ -115,7 +115,8 @@ async function main() {
     // GitHub 仓库地址和分支映射
     const repoUrl = 'https://github.com/AsMuin/project-template';
     const branchMap = {
-        react: 'react'
+        react: 'react',
+        'express-mongodb': 'express-mongodb'
     };
 
     // 获取用户选择的分支

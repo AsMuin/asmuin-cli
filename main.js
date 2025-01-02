@@ -1,10 +1,10 @@
-import inquirer from 'inquirer';
 import chalk from 'chalk';
 import figlet from 'figlet';
 import path from 'path';
 import axios from 'axios';
 import fs from 'fs';
 import unzipper from 'unzipper';
+import choose from './choose';
 
 async function downloadAndExtractRepo(repoUrl, branch, dest) {
     const zipUrl = `${repoUrl}/archive/refs/heads/${branch}.zip`;
@@ -77,40 +77,8 @@ async function main() {
     console.log(chalk.blueBright('欢迎！🎉🎉'));
     console.log(chalk.yellow('请选择一个模版开始你的项目：\n'));
 
-    // 交互选项
-    const templates = [
-        {
-            name: `${chalk.green('React + Axios + TailwindCSS')} - React`,
-            value: 'react'
-        },
-        {
-            name: `${chalk.cyan('Express + MongoDB')} - Express`,
-            value: 'express-mongodb'
-        }
-        // {
-        //     name: `${chalk.magenta('Next.js + TypeScript')} - Next.js`,
-        //     value: 'next-ts'
-        // }
-    ];
-    const {template, name} = await inquirer.prompt([
-        {
-            type: 'list',
-            name: 'template',
-            message: chalk.bold('请选择模版类型： ---全部使用TypeScript'),
-            choices: templates
-        },
-        {
-            type: 'input',
-            name: 'name',
-            message: chalk.bold('请输入项目名称：'),
-            validate(input) {
-                if (!input || input.trim() === '') {
-                    return '项目名称不能为空！';
-                }
-                return true;
-            }
-        }
-    ]);
+    // // 交互选项
+    const {name , template} = await choose();
 
     // GitHub 仓库地址和分支映射
     const repoUrl = 'https://github.com/AsMuin/project-template';

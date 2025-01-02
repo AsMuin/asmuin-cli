@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import babel from '@rollup/plugin-babel';
+import json from '@rollup/plugin-json'
 
 export default {
     input: 'main.js', // 入口文件
@@ -11,7 +12,10 @@ export default {
         banner: '#!/usr/bin/env node' // 添加 shebang
     },
     plugins: [
-        resolve(), // 支持第三方模块解析
+        resolve({
+            extensions: ['.js', '.json'] // 添加你需要的文件扩展名
+          }),
+        json(), // 支持 JSON 导入
         commonjs(), // 支持 CommonJS 转 ES 模块
         babel({
             babelHelpers: 'bundled',

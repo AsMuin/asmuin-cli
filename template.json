@@ -1,0 +1,40 @@
+{
+    "frontend": {
+        "key": "frontend",
+        "description": "请选择使用的开发框架：",
+        "name": "前端项目",
+        "choices": [
+            {
+                "name": "React + Axios + TailwindCSS",
+                "value": "react",
+                "color": "blue"
+            }
+        ]
+    },
+    "backend": {
+        "key": "backend",
+        "description": "请选择使用的开发框架：",
+        "name": "后端项目",
+        "choices": [
+            {
+                "name": "Express",
+                "value": "express",
+                "color": "magenta",
+                "next": {
+                    "database": {
+                        "description": "请选择使用的数据库：",
+                        "key": "database",
+                        "name": "数据库",
+                        "choices": [
+                            {
+                                "name": "MongoDB",
+                                "value": "mongodb",
+                                "color": "cyan"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -3,6 +3,7 @@
         "key": "frontend",
         "description": "请选择使用的开发框架：",
         "name": "前端项目",
+        "value": "frontend",
         "choices": [
             {
                 "name": "React + Axios + TailwindCSS",
@@ -15,6 +16,7 @@
         "key": "backend",
         "description": "请选择使用的开发框架：",
         "name": "后端项目",
+        "value": "backend",
         "choices": [
             {
                 "name": "Express",

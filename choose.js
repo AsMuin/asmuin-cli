@@ -26,7 +26,7 @@ async function chooseTemplate() {
             message: chalk.bold('请选择项目类型：'),
             choices: Object.keys(data).map((key) => ({
                 name: chalk.green(data[key].name),
-                value: key
+                value: data[key].value
             }))
         }
     ]);

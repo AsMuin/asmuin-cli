@@ -33,6 +33,6 @@ export default [{
         }),
         terser() // 压缩代码
     ],
-    external: ['chalk', 'axios', 'figlet', 'unzipper'] // 标记为外部依赖
+    external: ['inquirer','chalk', 'axios', 'figlet', 'unzipper'] // 标记为外部依赖
 },
 ]

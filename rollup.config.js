@@ -4,7 +4,7 @@ import terser from '@rollup/plugin-terser';
 import babel from '@rollup/plugin-babel';
 import json from '@rollup/plugin-json'
 
-export default {
+export default [{
     input: 'main.js', // 入口文件
     output: {
         file: 'dist/main.js', // 输出文件
@@ -14,7 +14,7 @@ export default {
     plugins: [
         resolve({
             extensions: ['.js', '.json'] // 添加你需要的文件扩展名
-          }),
+        }),
         json(), // 支持 JSON 导入
         commonjs(), // 支持 CommonJS 转 ES 模块
         babel({
@@ -33,5 +33,6 @@ export default {
         }),
         terser() // 压缩代码
     ],
-    external: ['chalk', 'inquirer', 'axios', 'figlet', 'unzipper', 'child_process'] // 标记为外部依赖
-};
+    external: ['chalk', 'axios', 'figlet', 'unzipper'] // 标记为外部依赖
+},
+]

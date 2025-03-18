@@ -32,6 +32,38 @@
                                 "name": "MongoDB",
                                 "value": "mongodb",
                                 "color": "cyan"
+                            },
+                            {
+                                "name": "PostgreSQL",
+                                "value": "postgresql",
+                                "color": "green"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "fullStack": {
+        "key": "fullStack",
+        "description": "请选择使用的全栈开发框架：",
+        "name": "全栈项目",
+        "value": "fullStack",
+        "choices": [
+            {
+                "name": "Next.js",
+                "value": "next",
+                "color": "red",
+                "next": {
+                    "database": {
+                        "description": "请选择使用的数据库：",
+                        "key": "database",
+                        "name": "数据库",
+                        "choices": [
+                            {
+                                "name": "PostgreSQL",
+                                "value": "postgresql",
+                                "color": "green"
                             }
                         ]
                     }

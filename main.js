@@ -84,11 +84,13 @@ async function main() {
     const repoUrl = 'https://github.com/AsMuin/project-template';
     const branchMap = {
         react: 'react',
-        'express-mongodb': 'express-mongodb'
+        'express-mongodb': 'express-mongodb',
+        'express-postgresql':'express-postgresql',
+        'next-postgresql':'next-postgresql'
     };
 
     // 获取用户选择的分支
-    const branch = branchMap[template];
+    const branch = branchMap[template] || template;
     const dest = path.join(process.cwd(), name);
 
     console.log(chalk.green(`正在下载 ${branch} 分支的模板...`));
